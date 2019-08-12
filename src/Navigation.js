@@ -13,13 +13,13 @@ class Navigation extends Component {
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item active">
-                    <h2 className="nav-link" href="/"> Login <span className="sr-only">(current)</span></h2>
+                    <h2 className="nav-link" href="/login"> Login <span className="sr-only">(current)</span></h2>
                   </li>
                   <li className="nav-item">
-                    <h2 className="nav-link" href="/">Sign Up <span className="sr-only">(current)</span></h2>
+                    <h2 className="nav-link" href="/signup">Sign Up <span className="sr-only">(current)</span></h2>
                   </li>
                   <li className="nav-item">
-                    <h2 className="nav-link" href="/">Browse <span className="sr-only">(current)</span></h2>
+                    <h2 className="nav-link" href="/browse">Browse <span className="sr-only">(current)</span></h2>
                   </li>
 
                 </ul>

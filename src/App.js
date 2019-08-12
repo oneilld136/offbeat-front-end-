@@ -8,20 +8,21 @@ import SignUp from './SignUp'
 import Favorites from './Favorites'
 import Browse from './Browse'
 import Home from './Home'
-import Navigation from './Navigation'
+
 
 import {Switch, Route} from 'react-router-dom'
 
 class App extends Component {
 
   state = {
-  name: ''
+  name: '',
+
 }
 
 componentDidMount() {
   if (localStorage.token) {
 
-    fetch('http://localhost:3001/', {
+    fetch('http://localhost:3001/profile', {
       headers: {
         Authorization: localStorage.token
       }
@@ -34,27 +35,29 @@ componentDidMount() {
 
 }
 
+
+
 // react router docs
+//
+//   <h1 class="header"> OFFbEAT</h1>
 
   render() {
     return (
 
 
       <Switch>
-      <Navigation />
 
-      <h1 class="header"> OFFbEAT</h1>
-        <Route
-        path= "/profile"
+
+        <Route exact path= "/profile"
         render={(routerProps) => <Profile  {...routerProps} name={this.state.name} />} />
 
-        <Route path= "/favorites/:id" component={Favorites}/>
-        <Route path = "/favorites"
+        <Route exact path= "/favorites/:id" component={Favorites}/>
+        <Route exact path = "/favorites"
         render={(routerProps) => <Favorites {...routerProps} name={this.state.name}/>}/>
 
-        <Route path="/signup" component={SignUp} />
-        <Route path= "/browse" component={Browse}/>
-        <Route path= "/login" component={Login}/>
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path= "/browse" component={Browse}/>
+        <Route exact path= "/login" component={Login}/>
         <Route exact path= "/" component={Home}/>
       </Switch>
 

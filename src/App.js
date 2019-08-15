@@ -8,6 +8,7 @@ import SignUp from './SignUp'
 import Favorites from './Favorites'
 import Browse from './Browse'
 import Home from './Home'
+import Spot from './Spot'
 
 
 import {Switch, Route} from 'react-router-dom'
@@ -16,33 +17,52 @@ class App extends Component {
 
   state = {
   name: '',
-
+  likedSpot:[]
 }
 
+
+
 componentDidMount() {
+
   if (localStorage.token) {
 
-    fetch('http://localhost:3001/profile', {
+    fetch('http://localhost:3000/profile', {
       headers: {
         Authorization: localStorage.token
       }
     })
     .then(res => res.json())
     .then(profileData => {
+      console.log(profileData)
       this.setState({name: profileData.name})
     })
   }
 
 }
 
+displaySpots = () => {
+  return this.state.browseSpot.map(spot => {
+    return <Spot key={spot.id} spot={spot} addFav={this.addFav}/>
+  })
+}
+
+addFav = (spot) => {
+  if (!this.state.likedSpot.includes(spot)) {
+  this.setState({
+    likedSpot:[...this.state.likedSpot,spot]
+  });
+}
+}
 
 
-// react router docs
-//
-//   <h1 class="header"> OFFbEAT</h1>
+
+
+
+
 
   render() {
     return (
+      <div>
 
 
       <Switch>
@@ -53,7 +73,7 @@ componentDidMount() {
 
         <Route exact path= "/favorites/:id" component={Favorites}/>
         <Route exact path = "/favorites"
-        render={(routerProps) => <Favorites {...routerProps} name={this.state.name}/>}/>
+        render={(routerProps) => <Favorites likedSpot={this.state.likedSpot} {...routerProps} name={this.state.name}/>}/>
 
         <Route exact path="/signup" component={SignUp} />
         <Route exact path= "/browse" component={Browse}/>
@@ -61,7 +81,7 @@ componentDidMount() {
         <Route exact path= "/" component={Home}/>
       </Switch>
 
-
+  </div>
 
     );
   }

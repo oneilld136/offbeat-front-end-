@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
-// import Spot from './Spot'
+import './App.css';
+import Spot from './Spot'
 
-class Favorites
- extends Component {
+class Favorites extends Component {
 
- // userFavs =()=>{
- //   return this.props.favorites((spot) => {
- //     return <Spot key={spot.id} spot={spot}/>
- //   })
- // }
+   displayLikedSpots = () => {
+
+
+     return this.props.likedSpot.map(spot => {
+       return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
+     })
+   }
 
 
   render() {
+
+
+
     return (
-      <div>
-          hi, {this.props.name} here are your favorites:
+      <div className="favorite">
+          <h1><span>⭐️</span></h1>
           <ul className="favoriteList">
-          <span>⭐️</span>
+          <span></span>
+          <h5> {this.displayLikedSpots()} </h5>
 
           </ul>
       </div>

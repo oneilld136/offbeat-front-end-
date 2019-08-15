@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Navigation from './Navigation'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -11,12 +12,14 @@ class Home extends Component {
     return (
 
 
-      <div>
-      <Navigation />
+      <div >
+      <Link className="link" to="/browse"><span>🍕 Enter</span></Link>
+
+
       <div className="pictures" id="cf">
-      <img className="bottom" src="https://cdn.newsday.com/polopoly_fs/1.9529241.1413927767!/httpImage/image.jpg_gen/derivatives/display_1004/image.jpg" />
-      <img className="top" src="https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzLzFkYjcwZjg1MDFhZmUxMjAzYl9JTUdfNjg0OS5KUEciXSxbInAiLCJjb252ZXJ0IiwiIl0sWyJwIiwiY29udmVydCIsIi1xdWFsaXR5IDgxIC1hdXRvLW9yaWVudCJdLFsicCIsInRodW1iIiwiMzcyeDI0OCMiXV0/IMG_6849.JPG" />
-      <img className="bottom" src="https://trekbible.com/wp-content/uploads/2018/12/tyler-goodell-328460-unsplash.jpg"/>
+      <img className="bottom" src="https://cdn.vox-cdn.com/thumbor/n6dzbQc_SjIpJKETDxctIajWRkk=/0x0:3000x2002/1200x800/filters:focal(1260x761:1740x1241)/cdn.vox-cdn.com/uploads/chorus_image/image/64022593/GettyImages_171171258.0.jpg" />
+      <img className="top" src="https://images.squarespace-cdn.com/content/v1/5af0e0bc9772aea4d08a4628/1529105627870-T2MQK9VQNP1FIOBJBD6R/ke17ZwdGBToddI8pDm48kOggE0Ch6pMGalwtLMqzsSB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1Ufo5RWkg_J4of0jUNHaDHx6pZKBvpVYzidBWCapg0tuoMuEaB2HPGSYDV-11UTcW2g/Afropunk_101516-42.jpg" />
+      <img className="bottom" src="https://assets3.thrillist.com/v1/image/1628198/size/tmg-article_default_mobile;jpeg_quality=20.jpg"/>
     </div>
 
 

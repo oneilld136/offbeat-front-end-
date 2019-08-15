@@ -1,34 +1,19 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class Navigation extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-              <h2 className="nav-link" href="/">Home <span className="sr-only">(current)</span></h2>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
 
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
-                  <li className="nav-item active">
-                    <h2 className="nav-link" href="/login"> Login <span className="sr-only">(current)</span></h2>
-                  </li>
-                  <li className="nav-item">
-                    <h2 className="nav-link" href="/signup">Sign Up <span className="sr-only">(current)</span></h2>
-                  </li>
-                  <li className="nav-item">
-                    <h2 className="nav-link" href="/browse">Browse <span className="sr-only">(current)</span></h2>
-                  </li>
+      <div class="navbar">
+     <a class="Home" href="/"><i class="home"></i>Home</a>
+     <a href="/signup"><i class="search"></i> Signup</a>
+     <a href="/login"><i class="login"></i> Login</a>
+      <a href="/profile"><i class="login"></i> Profile</a>
+      <a href="/browse"><i class="browse"></i> Browse</a>
+ </div>
 
-                </ul>
-                <form className="form-inline my-2 my-lg-0">
-                  <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                  <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-              </div>
-            </nav>
           )
         }
       }

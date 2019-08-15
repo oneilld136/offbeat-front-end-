@@ -2,12 +2,69 @@
 
 body {
 
-   background-image: url("https://ephemeralnewyork.files.wordpress.com/2011/05/1939indsecondsystemmap.jpg");
-}
+    background-image:url("/new.jpeg");
+  }
 
 
 #map {
-width: 750px;
+width: 500px;
+margin-left: 10%;
+margin-top: 0%;
+
+}
+
+.navbar {
+ display: flex;
+ justify-content: flex-end;
+ width: 100%;
+ background-color: ##6F9FD8;
+
+}
+.navbar a {
+ display: flex;
+ font-family:'Jaldi', sans-serif;
+ /* align-items: space-between; */
+ float: inherit;
+ padding: 1px;
+ color:  #DBB1CD;
+ text-decoration: none;
+ font-size: 30px;
+ /* justify-content: space-around */
+}
+.navbar a:hover {
+  color: #BC70A4;
+  text-shadow: 4px 2px #BFD641;
+ /* background-color: #BFD641;
+ opacity: .5; */
+}
+.active {
+ background-color: #;
+}
+
+.filter {
+  margin-left: 90%;
+  margin-top: 1%;
+  width: 200px;
+  padding: inherit;
+  border-radius: 14px;
+  border: 2px solid #EADEDB;
+  background:#BFD641;
+  font-family: 'Jaldi', sans-serif;
+  text-align: center;
+}
+
+.favorite {
+  margin-left: 1%;
+  border-radius: 14px;
+  border: 2px solid #6F9FD8;
+  background:#BFD641;
+  width: 600 px;
+
+}
+
+.link {
+  color: red;
+  size: 2em;
 
 }
 
@@ -31,18 +88,23 @@ width: 750px;
 }
 
 .flex-item {
-  background: brown;
-  padding: 5px;
-  width: 800px;
-  height: 150px;
+  background:#D5AE41;
+  padding: 4px;
+  width: 200px;
+  height: 100px;
   margin-top: 10px;
   margin-left:60px;
+  margin-bottom:10px;
+  border-radius: 14px;
+  border: 2px solid #3F69AA;
 
   line-height: 150px;
-  color: white;
+  color: #3F69AA;
    align-items: stretch;
   font-weight: normal;
-  font-size: 2em;
+  font-size: 5px;
+  text-align: center;
+  font-family: 'Jaldi', sans-serif;
   text-align: center;
 }
 
@@ -50,12 +112,12 @@ width: 750px;
 
 h1 {
   font-family: 'Jaldi', sans-serif;
-  text-align: center;
-  color:black;
-  text-shadow: 4px 2px #42d1f5;
-  margin-top: 10%;
+  text-align: justify;
+  border-radius: 1px;
+  color:#DC4C46;
+  text-shadow: 4px 2px #BFD641;
   padding:10px;
-  border: 10px black;
+  text-border: 10px black;
   margin: 35px;
   letter-spacing: 15px;
 }
@@ -73,9 +135,9 @@ h1 {
   width: 70%;
   height: auto;
   display: block;
-  margin-left: 15%;
-  margin-right: 20%;
-  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 30%;
+  margin-top: 1%;
   margin-bottom: 5%;
 
     animation-name: cf3FadeInOut;
@@ -83,22 +145,22 @@ h1 {
 /* if you only want to cycle a finite amount of times,
    simply change 'infinite' with # of iterations you need */
     animation-iteration-count: infinite;
-    animation-duration: 10s;
+    animation-duration: 15s;
     animation-direction: alternate; /* not strictly necessary */
     position:absolute;
 }
 
 #cf img:nth-of-type(1) {
-    animation-delay: 6s;
+    animation-delay: 5s;
 }
 
 #cf img:nth-of-type(2) {
-    animation-delay: 4s;
+    animation-delay: 9s;
 }
 
 #cf img:nth-of-type(3) {
     /* add some delay for the first picture as well */
-    animation-delay: 2s;
+    animation-delay: 11s;
 }
 
 @keyframes cf3FadeInOut {

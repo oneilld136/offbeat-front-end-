@@ -11,9 +11,12 @@ class Spot extends Component {
     return (
 
         <div className="flex-item">
-           <h4>{this.props.spot.name} <span onClick={this.handleClick}>🌟</span></h4>
-           <h5>Neck of the Woods:{this.props.spot.address}</h5>
-          <h5>Price Range:{this.props.spot.pricerange}</h5>
+           {this.props.spot.name}<span onClick={this.handleClick}>🍕</span>
+           <br/>
+
+           Neck of the Woods:{this.props.spot.address}
+           <br/>
+          Price Range:{this.props.spot.pricerange}
       </div>
     );
   }

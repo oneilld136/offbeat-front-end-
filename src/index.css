@@ -5,12 +5,12 @@ body {
     background-image:url("/new.jpeg");
   }
 
+.map {
+   margin-bottom: 40%; 
+}
 
-#map {
-width: 500px;
-margin-left: 10%;
-margin-top: 0%;
-
+h2 {
+  font-family: 'Lato', sans-serif;
 }
 
 .navbar {
@@ -26,9 +26,10 @@ margin-top: 0%;
  /* align-items: space-between; */
  float: inherit;
  padding: 1px;
+ height:2px;
  color:  #DBB1CD;
- text-decoration: none;
- font-size: 30px;
+ text-decoration: overline;
+ font-size: 27px;
  /* justify-content: space-around */
 }
 .navbar a:hover {
@@ -42,16 +43,38 @@ margin-top: 0%;
 }
 
 .filter {
-  margin-left: 90%;
-  margin-top: 1%;
-  width: 200px;
-  padding: inherit;
-  border-radius: 14px;
-  border: 2px solid #EADEDB;
-  background:#BFD641;
+  margin-left: 55%;
+  margin-top: 5%;
+  width: 300px;
+  /* border-radius: 14px; */
+  border: 2px solid #BFD641;
+  /* background: #BCBCBE; */
   font-family: 'Jaldi', sans-serif;
   text-align: center;
+
 }
+
+span {
+  font-size:20px;
+}
+
+span:hover {
+   text-shadow: 4px 4px #E94B3C;
+}
+
+span:visited {
+  background: green;
+}
+
+.filter {
+  color: #EADEDB;
+  letter-spacing: 5px;
+}
+
+.sort {
+  letter-spacing: 7px;
+}
+
 
 .favorite {
   margin-left: 1%;
@@ -62,20 +85,17 @@ margin-top: 0%;
 
 }
 
-.link {
-  color: red;
-  size: 2em;
 
-}
 
 
 .flex-container {
-  padding: 8;
-  margin: 1;
-  border-style: solid;
- border-width: 5px;
-  border: red;
-  list-style: none;
+  padding: 1%;
+  margin-left: 1%;
+  margin-top:0px;
+  width: 50%;
+  height: 50%;
+
+
 
   /* display: -webkit-box; */
   /* display: -moz-box;
@@ -88,23 +108,21 @@ margin-top: 0%;
 }
 
 .flex-item {
-  background:#D5AE41;
-  padding: 4px;
-  width: 200px;
-  height: 100px;
-  margin-top: 10px;
-  margin-left:60px;
+  background:#EADEDB;
+  padding: 5px;
+  width: 180px;
+  height: 80px;
+  margin-top: 1px;
+  margin-left:8%;
   margin-bottom:10px;
-  border-radius: 14px;
+  /* border-radius: 14px; */
   border: 2px solid #3F69AA;
 
-  line-height: 150px;
+  line-height: 15px;
   color: #3F69AA;
-   align-items: stretch;
   font-weight: normal;
-  font-size: 5px;
-  text-align: center;
-  font-family: 'Jaldi', sans-serif;
+  font-size: 15px;
+  font-family: sans-serif;
   text-align: center;
 }
 
@@ -114,12 +132,24 @@ h1 {
   font-family: 'Jaldi', sans-serif;
   text-align: justify;
   border-radius: 1px;
-  color:#DC4C46;
+  color: #DC4C46;
   text-shadow: 4px 2px #BFD641;
   padding:10px;
   text-border: 10px black;
   margin: 35px;
   letter-spacing: 15px;
+
+}
+
+h1 a:hover {
+  text-decoration: underline;
+
+  color:  #6B5B95;
+}
+
+h1 a{
+   color: #DC4C46;
+
 }
 
 .nav-link {
@@ -145,7 +175,7 @@ h1 {
 /* if you only want to cycle a finite amount of times,
    simply change 'infinite' with # of iterations you need */
     animation-iteration-count: infinite;
-    animation-duration: 15s;
+    animation-duration: 10s;
     animation-direction: alternate; /* not strictly necessary */
     position:absolute;
 }
@@ -155,12 +185,12 @@ h1 {
 }
 
 #cf img:nth-of-type(2) {
-    animation-delay: 9s;
+    animation-delay: 4s;
 }
 
 #cf img:nth-of-type(3) {
     /* add some delay for the first picture as well */
-    animation-delay: 11s;
+    animation-delay: 2s;
 }
 
 @keyframes cf3FadeInOut {

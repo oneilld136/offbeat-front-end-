@@ -13,7 +13,7 @@ class Home extends Component {
 
 
       <div >
-      <Link className="link" to="/browse"><span>🍕 Enter</span></Link>
+      
 
 
       <div className="pictures" id="cf">

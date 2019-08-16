@@ -102,6 +102,7 @@ return <Spot key={spot.id} spot={spot} addFav={this.addFav}/>
 
   render() {
 
+console.log(this.state.browseSpot)
 
 
     return (
@@ -115,7 +116,8 @@ return <Spot key={spot.id} spot={spot} addFav={this.addFav}/>
           sortTerm={this.state.sortTerm}/>
 
       <div className="flex-container">
-        <div> <Map/> </div>
+        <div> <Map spots={this.state.browseSpot}/> </div>
+
 
         <div className= "flex">{(this.filterSpotTerm())}</div>
 

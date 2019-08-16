@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Browse from './Browse'
 import Favorites from './Favorites'
 import Trip from './Trip'
+import Navigation from './Navigation'
 import Spot from './Spot'
 import { Link } from 'react-router-dom'
 import './App.css';
@@ -35,6 +36,7 @@ class Profile extends Component {
     render () {
       return (
         <div>
+        <Navigation />
         <h1>
           {
             this.props.name ?
@@ -47,7 +49,7 @@ class Profile extends Component {
 
           </li>
           <Trip mytrips={this.state.mytrips} createTrip={this.createTrip}/>
-          
+
             <li>
               <Link className="my-cool-link" to="/browse">Browse Super Hip Locations</Link>
             </li>

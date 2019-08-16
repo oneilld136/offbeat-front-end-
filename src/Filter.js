@@ -8,15 +8,15 @@ const Filter = (props) => {
 
 
       <label>
-        <input type="radio" value="Play" checked={props.sortTerm==="Play"? true : ""} onChange={(event) => props.setSortTerm(event.target.value)}/>
+        <input type="radio" className="sort" value="Play" checked={props.sortTerm==="Play"? true : ""} onChange={(event) => props.setSortTerm(event.target.value)}/>
         Play
       </label>
       <label>
-        <input type="radio" value="Eat" checked={props.sortTerm==="Eat"? true : ""} onChange={(event) => props.setSortTerm(event.target.value)}/>
+        <input type="radio" className="sort" value="Eat" checked={props.sortTerm==="Eat"? true : ""} onChange={(event) => props.setSortTerm(event.target.value)}/>
         Eat
       </label>
       <label>
-        <input type="radio" value="Culture" checked={props.sortTerm==="Culture"? true : ""} onChange={(event) => props.setSortTerm(event.target.value)}/>
+        <input type="radio" className="sort" value="Culture" checked={props.sortTerm==="Culture"? true : ""} onChange={(event) => props.setSortTerm(event.target.value)}/>
         Culture
       </label>
 

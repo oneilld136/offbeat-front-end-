@@ -7,7 +7,7 @@ class Navigation extends Component {
     return (
 
       <div class="navbar">
-     <a class="Home" href="/"><i class="home"></i>Home</a>
+  
      <a href="/signup"><i class="search"></i> Signup</a>
      <a href="/login"><i class="login"></i> Login</a>
       <a href="/profile"><i class="login"></i> Profile</a>

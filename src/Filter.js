@@ -23,7 +23,7 @@ const Filter = (props) => {
       <br/>
 
       <label>
-        <h4 className="sort">Neighborhood</h4>
+        <h3 className="hood">Neighborhood</h3>
         <select onChange={(event) => props.setFilterTerm(event.target.value)} value={props.term}>
           <option value="All">All</option>
           <option value="Williamsburg">Williamsburg</option>

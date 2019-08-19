@@ -16,7 +16,7 @@ state = {
   browseSpot:[],
   likedSpot:[],
   filterTerm:"All",
-  sortTerm:""
+  sortTerm:"All"
 }
 
 
@@ -63,15 +63,19 @@ return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
 
   // if (this.state.sortTerm === "Play")
   //   {
-  //   copiedSpots = this.state.browseSpot.filter(spot=> spot.cat === this.state.filterTerm)
+  //   copiedSpots = this.state.browseSpot.filter(spot=> spot.cat === this.state.sortTerm)
   //   }
   //   else if (this.state.sortTerm === "Eat")
   //   {
-  //     copiedSpots = this.state.browseSpot.filter(spot=> spot.cat === this.state.filterTerm)
+  //     copiedSpots = this.state.browseSpot.filter(spot=> spot.cat === this.state.sortTerm)
   //   }
   //   else if  (this.state.sortTerm === "Culture")
   //   {
-  //     copiedSpots = this.state.browseSpot.filter(spot=> spot.cat === this.state.filterTerm)
+  //     copiedSpots = this.state.browseSpot.filter(spot=> spot.cat === this.state.sortTerm)
+  //   }
+  //   else if  (this.state.sortTerm === "All")
+  //   {
+  //     copiedSpots = this.state.browseSpot
   //   }
   //
   // }
@@ -115,7 +119,7 @@ return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
           setSortTerm={this.setSortTerm}
           sortTerm={this.state.sortTerm}/>
 
-      <div className="flex-container">
+      <div className="flex-container row">
         <div> <Map spots={this.state.browseSpot}/> </div>
 
 

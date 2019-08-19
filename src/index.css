@@ -9,12 +9,42 @@ body {
    margin-top:1%;
 }
 
+.sign {
+  border: 5px solid #2E4A62;
+  background:#EADEDB;
+  margin: 5px;
+  width: 500px;
+  margin-left: 55%;
+  margin-top: 10%;
+  height:150px;
+}
+
+.spot {
+  color: #DC4C46;
+  text-shadow: 4px 2px #BFD641;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+
+}
+
 h3 {
   font-family: 'Lato', sans-serif;
   color:  #EC9787;
   margin:5px;
+  text-shadow: 4px 2px #BFD641;
 
 }
+
+h4 {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  color:  #6B5B95;
+  text-shadow: 1px 2px #BFD641;
+  text-spacing: 20px;
+}
+
+
 
 h2 {
   font-family: 'Jaldi', sans-serif;
@@ -61,13 +91,13 @@ h2 {
 }
 
 .filter {
-  margin-left: 45%;
+  margin-left: 49%;
   margin-top: 5%;
-  height: 100px;
+  height: 120px;
   width: 600px;
   /* border-radius: 14px; */
   border: 5px solid #2E4A62;
-  /* background: #d9f5d3; */
+  background: #EADEDB;
   font-family: 'Jaldi', sans-serif;
   text-align: center;
 
@@ -86,13 +116,24 @@ span:visited {
 }
 
 .filter {
-  color: #2E4A62;
+  color:#BC70A4;
   letter-spacing: 5px;
+}
+
+.camera {
+  margin-left: 64%;
+  margin-top: 40%;
+
+}
+
+.picture {
+  border:none;
+  margin-left: 100%;
 }
 
 .sort {
   letter-spacing: 5px;
-  word-spacing: 6px;
+  word-spacing: 5px;
   margin:3px;
   font-size: 20px;
 }
@@ -107,32 +148,41 @@ span:visited {
 
 }
 
+.name {
+  margin-left: 50%;
+
+  font-family: 'Lato', sans-serif;
+  color:  #6B5B95;
+  text-shadow: 1px 2px #BFD641;
 
 
+}
 
-.flex-container {
+
+.flex-container row  {
+
   padding: 1%;
   margin-left: 1%;
   margin-top:0px;
   width: 50%;
   height: 50%;
 
+ -ms-box-orient: horizontal;
+ display: -webkit-box;
+ display: -moz-box;
+ display: -ms-flexbox;
+ display: -moz-flex;
+ display: -webkit-flex;
+ display: flex;
 
 
-  /* display: -webkit-box; */
-  /* display: -moz-box;
-  display: -ms-flexbox; */
-  display: -webkit-flex;
-  display: flex;
-
-  -webkit-flex-flow: row wrap;
-  justify-content: center;
 }
 
 .flex-item {
+
   background:#EADEDB;
   padding: 5px;
-  width: 180px;
+  width: 200px;
   height: 80px;
   margin-top: 1px;
   margin-left:8%;
@@ -141,7 +191,7 @@ span:visited {
   border: 2px solid #3F69AA;
 
   line-height: 15px;
-  color: #3F69AA;
+  color: #004B8D;
   font-weight: normal;
   font-size: 15px;
   font-family: sans-serif;

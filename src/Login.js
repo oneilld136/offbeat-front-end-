@@ -34,6 +34,10 @@ handleSubmit = (e) => {
 
   render() {
     return (
+      <div align="center" className="sign">
+      <h3 > Login </h3>
+      <br/>
+
       <form onSubmit={this.handleSubmit}>
   <input
     placeholder="name"
@@ -49,6 +53,7 @@ handleSubmit = (e) => {
     value={this.state.password} />
   <input type="submit" />
 </form>
+</div>
 );
 }
 }

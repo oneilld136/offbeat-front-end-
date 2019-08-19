@@ -45,13 +45,10 @@ console.log(this.props.likedSpot)
         <Navigation />
         <br/>
         <br/>
-        <h1>
-          {
-            this.props.name ?
-            (`Hey ${this.props.name}`):
-          null
-          }
-          </h1>
+        <div className="name">
+
+          <h1>{this.props.name ?(`Hey ${this.props.name}`): null}</h1>
+
           <ul>
           <li>
           <h3> {this.displayLikedSpots()} </h3>
@@ -62,7 +59,8 @@ console.log(this.props.likedSpot)
             <li>
             </li>
           </ul>
-          <Browse/>
+
+        </div>
         </div>
       );
     }

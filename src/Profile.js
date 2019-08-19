@@ -9,8 +9,11 @@ import './App.css';
 
 class Profile extends Component {
 
+
+
     state = {
-      mytrips:[]
+      mytrips:[],
+
     }
 
 
@@ -26,34 +29,40 @@ class Profile extends Component {
     });
 }
 
-    // displayLikedSpots = () => {
-    //   console.log(this.props)
-    //   return this.props.likedSpot.map(spot => {
-    //     return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
-    //   })
-    // }
+    displayLikedSpots = () => {
+      return this.props.likedSpot.map(spot => {
+        return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
+      })
+    }
 
     render () {
+
+console.log(this.props.likedSpot)
       return (
+
+
         <div>
         <Navigation />
+        <br/>
+        <br/>
         <h1>
           {
             this.props.name ?
-            (`Welcome, ${this.props.name}!`):
-            null
+            (`Hey ${this.props.name}`):
+          null
           }
           </h1>
           <ul>
           <li>
-
+          <h3> {this.displayLikedSpots()} </h3>
           </li>
+
           <Trip mytrips={this.state.mytrips} createTrip={this.createTrip}/>
 
             <li>
-              <Link className="my-cool-link" to="/browse">Browse Super Hip Locations</Link>
             </li>
           </ul>
+          <Browse/>
         </div>
       );
     }

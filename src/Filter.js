@@ -7,15 +7,15 @@ const Filter = (props) => {
     <div className="filter">
 
 
-      <label>
-        <input type="radio" className="sort" value="Play" checked={props.sortTerm==="Play"? true : ""} onChange={(event) => props.setSortTerm(event.target.value)}/>
+      <label className="sort">
+        <input type="radio" value="Play" checked={props.sortTerm==="Play"? true : ""} onChange={(event) => props.setSortTerm(event.target.value)}/>
         Play
       </label>
-      <label>
+      <label className="sort">
         <input type="radio" className="sort" value="Eat" checked={props.sortTerm==="Eat"? true : ""} onChange={(event) => props.setSortTerm(event.target.value)}/>
         Eat
       </label>
-      <label>
+      <label className="sort" >
         <input type="radio" className="sort" value="Culture" checked={props.sortTerm==="Culture"? true : ""} onChange={(event) => props.setSortTerm(event.target.value)}/>
         Culture
       </label>
@@ -23,7 +23,7 @@ const Filter = (props) => {
       <br/>
 
       <label>
-        <h4>Neighborhood</h4>
+        <h4 className="sort">Neighborhood</h4>
         <select onChange={(event) => props.setFilterTerm(event.target.value)} value={props.term}>
           <option value="All">All</option>
           <option value="Williamsburg">Williamsburg</option>

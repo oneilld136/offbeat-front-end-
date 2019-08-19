@@ -9,20 +9,19 @@ import Favorites from './Favorites'
 import Browse from './Browse'
 import Home from './Home'
 import Spot from './Spot'
-
-
 import {Switch, Route} from 'react-router-dom'
 
 class App extends Component {
 
   state = {
   name: '',
-  likedSpot:[]
+  likedSpot: []
 }
 
 
 
 componentDidMount() {
+
 
   if (localStorage.token) {
 
@@ -33,7 +32,7 @@ componentDidMount() {
     })
     .then(res => res.json())
     .then(profileData => {
-      console.log(profileData)
+
       this.setState({name: profileData.name})
     })
   }
@@ -46,21 +45,31 @@ displaySpots = () => {
   })
 }
 
+
+
+
 addFav = (spot) => {
+  // debugger
   if (!this.state.likedSpot.includes(spot)) {
-  this.setState({
-    likedSpot:[...this.state.likedSpot,spot]
-  });
+    fetch('http://localhost:3000/likes', {
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(spot)
+})
+.then(res => res.json())
+.then(data =>{
+    this.setState({
+      likedSpot:[...this.state.likedSpot,spot]
+  })
+})
 }
 }
-
-
-
-
-
-
 
   render() {
+
     return (
       <div>
 
@@ -69,14 +78,17 @@ addFav = (spot) => {
 
 
         <Route exact path= "/profile"
-        render={(routerProps) => <Profile  {...routerProps} name={this.state.name} />} />
+        render={(routerProps) => <Profile  {...routerProps} addFav={this.addFav} name={this.state.name} likedSpot={this.state.likedSpot}/>} />
 
-        <Route exact path= "/favorites/:id" component={Favorites}/>
-        <Route exact path = "/favorites"
+        // <Route exact path= "/likes/id" component={Favorites}/>
+        <Route exact path = "/likes"
         render={(routerProps) => <Favorites likedSpot={this.state.likedSpot} {...routerProps} name={this.state.name}/>}/>
 
         <Route exact path="/signup" component={SignUp} />
-        <Route exact path= "/browse" component={Browse}/>
+
+        <Route exact path= "/browse"
+        render={(routerProps) => <Browse addFav={this.addFav} {...routerProps} />}/>
+
         <Route exact path= "/login" component={Login}/>
         <Route exact path= "/" component={Home}/>
       </Switch>

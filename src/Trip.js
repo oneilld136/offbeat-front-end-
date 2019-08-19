@@ -26,12 +26,13 @@ class Trip extends Component {
     console.log(this.props)
     return (
 <div>
-
+<div className="trip">
       <form onSubmit={this.handleSubmit}>
 
       <div>
-      <h1>🍕 PLAN A DAY TRIP🍕</h1>
+      <h3> PLAN A DAY TRIP</h3>
       </div>
+
       <input type="Name"
           name="name"
           placeholder="name this trip"
@@ -53,9 +54,11 @@ class Trip extends Component {
 <input type="Submit" value="Lets Go!"/>
 </form>
 
-     <h1>Your Trips</h1>
+     <h2>Your Trips: </h2>
      {this.props.mytrips.map(trip => trip.name)}
-
+     {this.props.mytrips.map(trip => trip.address)}
+     {this.props.mytrips.map(trip => trip.date)}
+</div>
 </div>
     );
   }

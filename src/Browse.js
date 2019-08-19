@@ -4,7 +4,7 @@ import Spot from './Spot';
 import Navigation from './Navigation'
 import Favorites from './Favorites'
 import Filter from './Filter'
-import Profile from './Profile'
+// import Profile from './Profile'
 import Trip from './Trip'
 import './App.css';
 
@@ -55,7 +55,7 @@ let copiedSpots = [...this.state.browseSpot]
     copiedSpots = this.state.browseSpot.filter(spot=> spot.address === this.state.filterTerm)
   }
 return copiedSpots.map(spot => {
-return <Spot key={spot.id} spot={spot} addFav={this.addFav}/>
+return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
 })
   }
 
@@ -81,19 +81,19 @@ return <Spot key={spot.id} spot={spot} addFav={this.addFav}/>
 
 
 
-  addFav = (spot) => {
-
-    if (!this.state.likedSpot.includes(spot)) {
-    this.setState({
-      likedSpot:[...this.state.likedSpot,spot]
-    });
-  }
-  }
+  // addFav = (spot) => {
+  //   console.log(this.state.likedSpot)
+  //   if (!this.state.likedSpot.includes(spot)) {
+  //   this.setState({
+  //     likedSpot:[...this.state.likedSpot,spot]
+  //   });
+  // }
+  // }
 
 
   displaySpots = () => {
     return this.state.browseSpot.map(spot => {
-      return <Spot key={spot.id} spot={spot} addFav={this.addFav}/>
+      return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
     })
   }
 
@@ -102,7 +102,7 @@ return <Spot key={spot.id} spot={spot} addFav={this.addFav}/>
 
   render() {
 
-console.log(this.state.browseSpot)
+
 
 
     return (
@@ -125,7 +125,7 @@ console.log(this.state.browseSpot)
 
 
         </div>
-          <Favorites likedSpot={this.state.likedSpot} liked={this.addFav}/>
+
         </div>
 
 

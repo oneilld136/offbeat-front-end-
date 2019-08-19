@@ -3,15 +3,17 @@ import React, { Component } from 'react';
 class Spot extends Component {
 
   handleClick=()=>{
-
+    console.log("i clicked")
+    console.log(this.props);
     this.props.addFav(this.props.spot)
   }
 
   render() {
+
     return (
 
         <div className="flex-item">
-           {this.props.spot.name}<span onClick={this.handleClick}>🍕</span>
+           {this.props.spot.name}<span onClick={this.handleClick}>💥</span>
            <br/>
 
            Neck of the Woods:{this.props.spot.address}

@@ -5,7 +5,7 @@ import Spot from './Spot'
 class Favorites extends Component {
 
    displayLikedSpots = () => {
-
+     console.log(this.props)
 
      return this.props.likedSpot.map(spot => {
        return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
@@ -14,8 +14,6 @@ class Favorites extends Component {
 
 
   render() {
-
-
 
     return (
       <div className="favorite">

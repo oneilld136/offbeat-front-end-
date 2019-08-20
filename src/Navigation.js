@@ -7,11 +7,11 @@ class Navigation extends Component {
     return (
 
       <div class="navbar">
-  
-     <a href="/signup"><i class="search"></i> Signup</a>
-     <a href="/login"><i class="login"></i> Login</a>
-      <a href="/profile"><i class="login"></i> Profile</a>
-      <a href="/browse"><i class="browse"></i> Browse</a>
+
+     <Link to="/signup"><i class="search"></i> Signup</Link>
+     <Link to="/login"><i class="login"></i> Login</Link>
+      <Link to="/profile"><i class="login"></i> Profile</Link>
+      <Link to="/browse"><i class="browse"></i> Browse</Link>
  </div>
 
           )

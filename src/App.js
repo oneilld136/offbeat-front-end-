@@ -49,18 +49,21 @@ displaySpots = () => {
 
 
 addFav = (spot) => {
-  // debugger
+
   if (!this.state.likedSpot.includes(spot)) {
     fetch('http://localhost:3000/likes', {
   method: 'POST',
   headers: {
+    Authorization: localStorage.token,
     'Accept': 'application/json',
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify(spot)
+  body: JSON.stringify({
+    spot_id: spot.id})
 })
 .then(res => res.json())
 .then(data =>{
+
     this.setState({
       likedSpot:[...this.state.likedSpot,spot]
   })
@@ -70,6 +73,7 @@ addFav = (spot) => {
 
   render() {
 
+console.log("check", this.state.likedSpot);
     return (
       <div>
 

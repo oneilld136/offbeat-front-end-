@@ -14,9 +14,8 @@ class Browse extends Component {
 
 state = {
   browseSpot:[],
-  likedSpot:[],
   filterTerm:"All",
-  sortTerm:"All"
+  sortTerm:""
 }
 
 
@@ -46,88 +45,67 @@ state = {
 
 filterSpotTerm = () => {
 
-
 let copiedSpots = [...this.state.browseSpot]
   // Filter the spots
   if (this.state.filterTerm === 'All') {
     copiedSpots = [...this.state.browseSpot]
-  } else {
-    copiedSpots = this.state.browseSpot.filter(spot=> spot.address === this.state.filterTerm)
-  }
-return copiedSpots.map(spot => {
-return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
-})
+  } else  {
+    copiedSpots = copiedSpots.filter(spot=> spot.address === this.state.filterTerm)
   }
 
 
+  if (this.state.sortTerm === "Play")
+    {
+    copiedSpots = copiedSpots.filter(spot=> spot.cat === this.state.sortTerm)
+    }
+    else if (this.state.sortTerm === "Eat")
+    {
+      copiedSpots = copiedSpots.filter(spot=> spot.cat === this.state.sortTerm)
+    }
+    else if  (this.state.sortTerm === "Culture")
+    {
+      copiedSpots = copiedSpots.filter(spot=> spot.cat === this.state.sortTerm)
+    }
+    return copiedSpots.map(spot => {
+    return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
+  })
 
-  // if (this.state.sortTerm === "Play")
-  //   {
-  //   copiedSpots = this.state.browseSpot.filter(spot=> spot.cat === this.state.sortTerm)
-  //   }
-  //   else if (this.state.sortTerm === "Eat")
-  //   {
-  //     copiedSpots = this.state.browseSpot.filter(spot=> spot.cat === this.state.sortTerm)
-  //   }
-  //   else if  (this.state.sortTerm === "Culture")
-  //   {
-  //     copiedSpots = this.state.browseSpot.filter(spot=> spot.cat === this.state.sortTerm)
-  //   }
-  //   else if  (this.state.sortTerm === "All")
-  //   {
-  //     copiedSpots = this.state.browseSpot
-  //   }
-  //
-  // }
+  }
 
 
 
 
-
-
-  // addFav = (spot) => {
-  //   console.log(this.state.likedSpot)
-  //   if (!this.state.likedSpot.includes(spot)) {
-  //   this.setState({
-  //     likedSpot:[...this.state.likedSpot,spot]
-  //   });
-  // }
-  // }
 
 
   displaySpots = () => {
     return this.state.browseSpot.map(spot => {
       return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
     })
-  }
+  };
 
 
 
 
   render() {
-
-
-
+console.log(this.state)
 
     return (
 
 
       <div>
         <Navigation />
+      <div>
           <Filter setFilterTerm = {this.setFilterTerm}
           term={this.state.filterTerm}
           setSortTerm={this.setSortTerm}
           sortTerm={this.state.sortTerm}/>
 
-      <div className="flex-container row">
-        <div> <Map spots={this.state.browseSpot}/> </div>
 
-
-        <div className= "flex">{(this.filterSpotTerm())}</div>
+        <div> <Map spots={this.state.browseSpot}/> </div><div className="flex-container">  <div className= "flex-container">{(this.filterSpotTerm())}</div>
 
 
 
-
+        </div>
         </div>
 
         </div>

@@ -10,7 +10,7 @@ const [selectedSpot,setSelectedSpot] = useState(null);
   return  (
 
       <GoogleMap
-          defaultZoom={12}
+          defaultZoom={13}
           defaultCenter={{lat:40.692532,lng:-73.990997 }}
           defaultOptions={{styles: mapStyles}}
           >
@@ -22,8 +22,8 @@ const [selectedSpot,setSelectedSpot] = useState(null);
                 setSelectedSpot(spot);
               }}
               icon = {{
-                url: '/brooklynbridge.svg',
-                scaledSize: new window.google.maps.Size(27,27)
+                url: '/search.png',
+                scaledSize: new window.google.maps.Size(25,25)
               }}
             />
           ))}

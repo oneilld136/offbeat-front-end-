@@ -56,6 +56,7 @@ class Trip extends Component {
 
      <h2>Your Trips: </h2>
      {this.props.mytrips.map(trip => trip.name)}
+
      {this.props.mytrips.map(trip => trip.address)}
      {this.props.mytrips.map(trip => trip.date)}
 </div>

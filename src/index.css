@@ -6,7 +6,7 @@ body {
   }
 
 .map {
-   margin-top:1%;
+   margin-top:0%;
 }
 
 .sign {
@@ -91,13 +91,15 @@ h2 {
 }
 
 .filter {
-  margin-left: 49%;
+  display: inline-block;
+  margin:;
+  margin-left: 54%;
   margin-top: 5%;
   height: 120px;
-  width: 600px;
+  width: 500px;
   /* border-radius: 14px; */
   border: 5px solid #2E4A62;
-  background: #EADEDB;
+  background:#DFCFBE;
   font-family: 'Jaldi', sans-serif;
   text-align: center;
 
@@ -109,6 +111,7 @@ span {
 
 span:hover {
    text-shadow: 4px 4px #E94B3C;
+   cursor: pointer;
 }
 
 span:visited {
@@ -159,31 +162,26 @@ span:visited {
 }
 
 
-.flex-container row  {
+.flex-container  {
 
-  padding: 1%;
-  margin-left: 1%;
-  margin-top:0px;
-  width: 50%;
-  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+   float: right;
 
- -ms-box-orient: horizontal;
- display: -webkit-box;
- display: -moz-box;
- display: -ms-flexbox;
- display: -moz-flex;
- display: -webkit-flex;
- display: flex;
 
 
 }
 
 .flex-item {
-
+  margin-left: 60%;
+  position: relative;
   background:#EADEDB;
-  padding: 5px;
-  width: 200px;
-  height: 80px;
+  /* padding: 5px; */
+  padding-bottom: 6%;
+  width: 250px;
+  height: 20px;
   margin-top: 1px;
   margin-left:8%;
   margin-bottom:10px;
@@ -196,6 +194,8 @@ span:visited {
   font-size: 15px;
   font-family: sans-serif;
   text-align: center;
+
+
 }
 
 

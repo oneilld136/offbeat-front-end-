@@ -22,6 +22,7 @@ class Spot extends Component {
     console.log("i clicked")
     console.log(this.props);
     this.props.addFav(this.props.spot)
+    alert("🌟 Yahoo! This spot has been saved to your profile 🌟");
   }
 
 

@@ -13,7 +13,6 @@ class Profile extends Component {
 
     state = {
       mytrips:[],
-
     }
 
 
@@ -30,20 +29,21 @@ class Profile extends Component {
 }
 
     displayLikedSpots = () => {
+
       return this.props.likedSpot.map(spot => {
         return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
       })
     }
 
     render () {
-
-console.log(this.props.likedSpot)
+      console.log(this.props.likedSpot)
       return (
 
 
         <div>
         <Navigation />
         <br/>
+
         <br/>
         <div className="name">
 

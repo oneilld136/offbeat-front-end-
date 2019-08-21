@@ -45,22 +45,17 @@ class Profile extends Component {
         <br/>
 
         <br/>
-        <div className="name">
 
-          <h1>{this.props.name ?(`Hey ${this.props.name}`): null}</h1>
 
-          <ul>
-          <li>
-          <h3> {this.displayLikedSpots()} </h3>
-          </li>
+          <div className="newname">{this.props.name ? (`Hey ${this.props.name}`) : null}</div>
+           <h5>Here are your favorite spots:</h5>
+          <div className="liked"> {this.displayLikedSpots()} </div>
+
+
 
           <Trip mytrips={this.state.mytrips} createTrip={this.createTrip}/>
 
-            <li>
-            </li>
-          </ul>
 
-        </div>
         </div>
       );
     }

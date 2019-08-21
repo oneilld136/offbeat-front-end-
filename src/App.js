@@ -15,7 +15,9 @@ class App extends Component {
 
   state = {
   name: '',
-  likedSpot: []
+  likedSpot: [],
+  
+
 }
 
 
@@ -38,6 +40,8 @@ componentDidMount() {
   }
 
 }
+
+
 
 displaySpots = () => {
   return this.state.browseSpot.map(spot => {
@@ -91,7 +95,7 @@ console.log("check", this.state.likedSpot);
         <Route exact path="/signup" component={SignUp} />
 
         <Route exact path= "/browse"
-        render={(routerProps) => <Browse addFav={this.addFav} {...routerProps} />}/>
+        render={(routerProps) => <Browse selectedItem={this.state.selectedItem} addFav={this.addFav} {...routerProps} />}/>
 
         <Route exact path= "/login" component={Login}/>
         <Route exact path= "/" component={Home}/>

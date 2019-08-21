@@ -10,17 +10,25 @@ class Trip extends Component {
     address:''
   }
 
-  handleSubmit=(event)=>{
-    console.log(this.state)
-  event.preventDefault()
-  this.props.createTrip(this.state)
-}
 
   changeHandler = event => {
     this.setState({
       [event.target.name]:event.target.value
     });
   }
+
+  handleSubmit=(event)=>{
+
+    console.log(this.state)
+  event.preventDefault()
+  this.props.createTrip(this.state)
+  this.setState({
+    name:'',
+    date:'',
+    address:''
+});
+}
+
 
   render() {
     console.log(this.props)
@@ -35,30 +43,42 @@ class Trip extends Component {
 
       <input type="Name"
           name="name"
+          type="text"
           placeholder="name this trip"
           value={this.state.name}
           onChange={this.changeHandler}
+
    />
    <input type="Date"
        name="date"
+       type="text"
        placeholder="date"
        value={this.state.date}
        onChange={this.changeHandler}
 />
 <input type="Address"
     name="address"
+    type="text"
     placeholder="Neighborhood"
     value={this.state.address}
     onChange={this.changeHandler}
 />
 <input type="Submit" value="Lets Go!"/>
-</form>
-
      <h2>Your Trips: </h2>
-     {this.props.mytrips.map(trip => trip.name)}
+     <ul>
+      {this.props.mytrips.map(trip => {
+return (
+  <div>
+      <h3>{trip.name}</h3>
+     <li>{trip.address}</li>
+     <li>{trip.date}</li>
+     </div>
+  ) } )
 
-     {this.props.mytrips.map(trip => trip.address)}
-     {this.props.mytrips.map(trip => trip.date)}
+ }
+     </ul>
+     </form>
+
 </div>
 </div>
     );

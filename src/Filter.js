@@ -5,7 +5,8 @@ import './App.css';
 class Filter extends Component {
 
   state = {
-    value:''
+    value:'',
+    radioButton:false
   }
 
   handleChange=(e)=> { this.setState({
@@ -13,23 +14,43 @@ class Filter extends Component {
   });
 }
 
+onClickAvailability=(e)=>{
+
+            if(e.target.checked && !this.state.radioButton){
+                this.setState({
+                    radioButton:true,
+                })
+            }else if(e.target.checked && this.state.radioButton){
+                this.setState({
+                    radioButton:false,
+                })
+     }
+   }
+
   render() {
     return (
       <div className="filter">
 
 
         <label className="sort">
-          <input type="radio" value="Play" checked={this.props.sortTerm==="Play"? true : ""} onChange={(event) => this.props.setSortTerm(event.target.value)}/>
+          <input type="radio" onClick={this.onClickAvailability}  value="Play" name="name" checked={this.state.radioButton} checked={this.props.sortTerm==="Play"? true : ""} onChange={(event) => this.props.setSortTerm(event.target.value)}/>
           Play
         </label>
         <label className="sort">
-          <input type="radio" className="sort" value="Eat" checked={this.props.sortTerm==="Eat"? true : ""} onChange={(event) => this.props.setSortTerm(event.target.value)}/>
+          <input type="radio" className="sort" name="name" value="Eat" checked={this.props.sortTerm==="Eat"? true : ""} onChange={(event) => this.props.setSortTerm(event.target.value)}/>
           Eat
         </label>
         <label className="sort" >
-          <input type="radio" className="sort" value="Culture" checked={this.props.sortTerm==="Culture"? true : ""} onChange={(event) => this.props.setSortTerm(event.target.value)}/>
+          <input type="radio" className="sort" name="name" value="Culture" checked={this.props.sortTerm==="Culture"? true : ""} onChange={(event) => this.props.setSortTerm(event.target.value)}/>
           Culture
         </label>
+        <label className="sort" >
+          <input type="radio" className="sort" name="name" value="All" checked={this.props.sortTerm==="All"? true : ""} onChange={(event) => this.props.setSortTerm(event.target.value)}/>
+          All
+
+
+        </label>
+      
 
         <br/>
 

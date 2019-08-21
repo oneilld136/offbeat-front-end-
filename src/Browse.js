@@ -15,7 +15,8 @@ class Browse extends Component {
 state = {
   browseSpot:[],
   filterTerm:"All",
-  sortTerm:""
+  sortTerm:"",
+  selectedItem: ""
 }
 
 
@@ -42,6 +43,12 @@ state = {
      });
 
 
+     showInfo=(selectedItem) => {
+       const name = selectedItem.spot.name
+       if (name === selectedItem)
+       this.setState({ selectedItem:selectedItem});
+       console.log(this.state.selectedItem);
+     }
 
 filterSpotTerm = () => {
 
@@ -66,8 +73,9 @@ let copiedSpots = [...this.state.browseSpot]
     {
       copiedSpots = copiedSpots.filter(spot=> spot.cat === this.state.sortTerm)
     }
+
     return copiedSpots.map(spot => {
-    return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
+    return <Spot key={spot.id} showInfo={this.showInfo} onClick={e => this.onClick(e, spot)} spotInfo={this.spotInfo} spot={spot} addFav={this.props.addFav}/>
   })
 
   }
@@ -79,15 +87,17 @@ let copiedSpots = [...this.state.browseSpot]
 
   displaySpots = () => {
     return this.state.browseSpot.map(spot => {
-      return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
+      return <Spot key={spot.id} showInfo={this.showInfo} onClick={e => this.onClick(e, spot)} spotInfo={this.spotInfo} spot={spot} addFav={this.props.addFav}/>
     })
   };
 
 
 
 
+
+
   render() {
-console.log(this.state)
+
 
     return (
 
@@ -101,7 +111,10 @@ console.log(this.state)
           sortTerm={this.state.sortTerm}/>
 
 
-        <div> <Map spots={this.state.browseSpot}/> </div><div className="flex-container">  <div className= "flex-container">{(this.filterSpotTerm())}</div>
+        <div className="map"> <Map  spotInfo={this.spotInfo} selectedItem={this.state.selectedItem} spots={this.state.browseSpot}/> </div>
+            <h6> * Click the 💥 to add to your favorites </h6>
+
+        <div>  <div className= "flex-container">{(this.filterSpotTerm())}</div>
 
 
 

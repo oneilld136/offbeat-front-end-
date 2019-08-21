@@ -18,6 +18,11 @@ class Spot extends Component {
   }
 
 
+  mapClick=()=>{
+    this.props.showInfo(this.props)
+  }
+
+
   handleClick=()=>{
     console.log("i clicked")
     console.log(this.props);
@@ -30,15 +35,13 @@ class Spot extends Component {
     const image = this.state.clicked? this.props.spot.img : null
 
     return (
-
+            
 
         <div className="flex-item" >
-           {this.props.spot.name}<span onClick={this.handleClick}>💥</span>
-           <br/>
-            <br/>
-           {this.props.spot.address}
+           <h6 onClick={this.mapClick}>{this.props.spot.name}<span onClick={this.handleClick}>💥</span></h6>
+           <h6> {this.props.spot.address}    ({this.props.spot.price})</h6>
         <br/>
-           {this.props.spot.price}
+
 
              {/*   <div>
         // {/     <span className="camera" onClick={this.handleCameraClick}>

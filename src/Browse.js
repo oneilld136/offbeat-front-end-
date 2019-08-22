@@ -4,7 +4,7 @@ import Spot from './Spot';
 import Navigation from './Navigation'
 import Favorites from './Favorites'
 import Filter from './Filter'
-// import Profile from './Profile'
+import Profile from './Profile'
 import Trip from './Trip'
 import './App.css';
 

@@ -13,6 +13,7 @@ class Profile extends Component {
 
     state = {
       mytrips:[],
+      hovered:""
     }
 
 
@@ -28,10 +29,19 @@ class Profile extends Component {
     });
 }
 
+handleHover = (spot) => {
+  // console.log(spot.name)
+
+     this.setState({
+       hovered:spot.name
+     });
+
+
+ }
     displayLikedSpots = () => {
 
       return this.props.likedSpot.map(spot => {
-        return <Spot key={spot.id} spot={spot} addFav={this.props.addFav}/>
+        return <Spot onHover={this.handleHover} key={spot.id} spot={spot} addFav={this.props.addFav}/>
       })
     }
 

@@ -24,7 +24,7 @@ class Spot extends Component {
 
   onMouseMove=(event)=>{
     this.props.onHover(this.props.spot)
-    
+
 
   }
 
@@ -44,7 +44,7 @@ class Spot extends Component {
 
 
         <div  className="flex-item" >
-           <h6 onMouseMove={this.onMouseMove}>{this.props.spot.name}<span onClick={this.handleClick}>💥</span></h6>
+           <h6 className="point" onMouseMove={this.onMouseMove}>{this.props.spot.name}</h6><span onClick={this.handleClick}>💥</span>
            <h6> {this.props.spot.address}    ({this.props.spot.price})</h6>
         <br/>
 

@@ -8,9 +8,7 @@ import Filter from './Filter'
 import Trip from './Trip'
 import './App.css';
 
-
 class Browse extends Component {
-
 
 state = {
   browseSpot:[],
@@ -42,13 +40,20 @@ state = {
     sortTerm:term
      });
 
+     handleHover = (spot) => {
+       const id = spot;
+     }
+
+
 
      showInfo=(selectedItem) => {
-       const name = selectedItem.spot.name
-       if (name === selectedItem)
+
        this.setState({ selectedItem:selectedItem});
        console.log(this.state.selectedItem);
      }
+
+
+
 
 filterSpotTerm = () => {
 
@@ -75,7 +80,7 @@ let copiedSpots = [...this.state.browseSpot]
     }
 
     return copiedSpots.map(spot => {
-    return <Spot key={spot.id} showInfo={this.showInfo} onClick={e => this.onClick(e, spot)} spotInfo={this.spotInfo} spot={spot} addFav={this.props.addFav}/>
+    return <Spot key={spot.id} showInfo={this.showInfo} onHover={this.handleHover} spotInfo={this.spotInfo} spot={spot} addFav={this.props.addFav}/>
   })
 
   }
@@ -83,11 +88,9 @@ let copiedSpots = [...this.state.browseSpot]
 
 
 
-
-
   displaySpots = () => {
     return this.state.browseSpot.map(spot => {
-      return <Spot key={spot.id} showInfo={this.showInfo} onClick={e => this.onClick(e, spot)} spotInfo={this.spotInfo} spot={spot} addFav={this.props.addFav}/>
+      return <Spot key={spot.id} showInfo={this.showInfo} onHover={this.handleHover}  spotInfo={this.spotInfo} spot={spot} addFav={this.props.addFav}/>
     })
   };
 
@@ -97,6 +100,7 @@ let copiedSpots = [...this.state.browseSpot]
 
 
   render() {
+
 
 
     return (
@@ -109,15 +113,15 @@ let copiedSpots = [...this.state.browseSpot]
           term={this.state.filterTerm}
           setSortTerm={this.setSortTerm}
           sortTerm={this.state.sortTerm}/>
+          <div>
 
+        <div className="map"> <Map onHover={this.handleHover} spotInfo={this.spotInfo} selectedItem={this.state.selectedItem} spots={this.state.browseSpot}/> </div>
 
-        <div className="map"> <Map  spotInfo={this.spotInfo} selectedItem={this.state.selectedItem} spots={this.state.browseSpot}/> </div>
-            <h6> * Click the 💥 to add to your favorites </h6>
-
+            <h6 className="add">Select the 💥 to add to your profile</h6>
         <div>  <div className= "flex-container">{(this.filterSpotTerm())}</div>
 
 
-
+        </div>
         </div>
         </div>
 

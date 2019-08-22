@@ -3,23 +3,31 @@ import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from 'react-
 import mapStyles from "./mapStyles";
 
 
-function Map(props){
 
+function Map(props){
+const [hovered, setHovered] = useState(null);
 const [selectedSpot,setSelectedSpot] = useState(null);
+const name = props.spots.name;
+
+if (hovered !== name){
+  setHovered(console.log(name));
+}
 
   return  (
 
+
       <GoogleMap
-          defaultZoom={13}
+          defaultZoom={12}
           defaultCenter={{lat:40.692532,lng:-73.990997 }}
           defaultOptions={{styles: mapStyles}}
-
           >
           {props.spots.map((spot) => (
 
-            <Marker key={spot.id} name={spot.name} position={{lat:parseFloat(spot.lat),lng: parseFloat(spot.lng),
+            <Marker  animation={window.google.maps.Animation.DROP} onHover={props.onHover} isActive={hovered === props.spots.name} key={spot.id} name={spot.name} position={{lat:parseFloat(spot.lat),lng: parseFloat(spot.lng),
             }}
-              animation={window.google.maps.Animation.DROP}
+
+
+
               onClick={() => {
                 setSelectedSpot(spot);
               }}
@@ -59,6 +67,7 @@ const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export default function App(props){
 
+
   return (
     <div  className="map" style={{ width: "50vw", height: "70vh" }}>
   <WrappedMap  googleMapURL={'https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyC-6F3hmcqCvaH3eS7r6CxM9jCZwjjnKo4'}
@@ -66,6 +75,7 @@ export default function App(props){
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div  style={{ height: `100%` }} />}
   spots={props.spots}
+
 />
   </div>)
 }

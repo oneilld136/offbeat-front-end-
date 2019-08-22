@@ -46,6 +46,14 @@ h3 {
 
 }
 
+h3.hood {
+  font-family: 'Lato', sans-serif;
+  color:  #EC9787;
+  margin-left:5%;
+  text-shadow: 4px 2px #BFD641;
+
+}
+
 h5 {
   margin-left: 11%;
   font-family: 'Lato', sans-serif;
@@ -77,6 +85,18 @@ h6 {
   text-align: center;
   font-family: 'Lato', sans-serif;
   color:  #6B5B95;
+  text-shadow: 1px 2px #BFD641;
+}
+
+h6.add {
+  text-align: inherit;
+  font-family: 'Lato', sans-serif;
+  color:  #6B5B95;
+  float: right;
+  margin-right: 11%;
+
+
+
   text-shadow: 1px 2px #BFD641;
 }
 
@@ -160,6 +180,7 @@ span:visited {
 .filter {
   color:#BC70A4;
   letter-spacing: 5px;
+  margin: 2em;
 }
 
 .camera {
@@ -217,10 +238,6 @@ span:visited {
   margin-right: 2%;
   float: right;
   justify-content:flex-start;
-
-
-
-
 }
 
 .flex-item {

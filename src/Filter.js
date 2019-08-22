@@ -50,7 +50,7 @@ onClickAvailability=(e)=>{
 
 
         </label>
-      
+
 
         <br/>
 
@@ -71,8 +71,11 @@ onClickAvailability=(e)=>{
             <option value="Fort Greene">Fort Greene</option>
             <option value="Gowanus">Gowanus</option>
           </select>
+
         </label>
+
         </div>
+
   );
   }
   }

@@ -306,7 +306,7 @@ h1 a{
 
 #cf img {
   width: 50em;
-  height: auto;
+  height: 50em;
   display: block;
 
   display: block;
@@ -319,28 +319,64 @@ h1 a{
 /* if you only want to cycle a finite amount of times,
    simply change 'infinite' with # of iterations you need */
     animation-iteration-count: infinite;
-    animation-duration: 3s;
+    animation-duration: 25s;
     animation-direction: alternate; /* not strictly necessary */
     position:absolute;
 }
 
 #cf img:nth-of-type(1) {
-    animation-delay: 0s;
+    animation-delay: 28s;
 }
 
 #cf img:nth-of-type(2) {
-    animation-delay: 4s;
+    animation-delay: 25s;
 }
 
 #cf img:nth-of-type(3) {
     /* add some delay for the first picture as well */
-    animation-delay: 6s;
+    animation-delay: 22s;
 }
+#cf img:nth-of-type(4) {
+    /* add some delay for the first picture as well */
+    animation-delay: 19s;
+}
+#cf img:nth-of-type(5) {
+    /* add some delay for the first picture as well */
+    animation-delay: 16s;
+}
+#cf img:nth-of-type(6) {
+    /* add some delay for the first picture as well */
+    animation-delay: 10s;
+}
+#cf img:nth-of-type(7) {
+    /* add some delay for the first picture as well */
+    animation-delay: 13s;
+}
+#cf img:nth-of-type(8) {
+    /* add some delay for the first picture as well */
+    animation-delay: 10s;
+}
+#cf img:nth-of-type(9) {
+    /* add some delay for the first picture as well */
+    animation-delay: 7s;
+}
+#cf img:nth-of-type(10) {
+    /* add some delay for the first picture as well */
+    animation-delay: 4s;
+}
+#cf img:nth-of-type(11) {
+    /* add some delay for the first picture as well */
+    animation-delay: 1s;
+}
+
+
+
+
 
 @keyframes cf3FadeInOut {
     /* distributing times evenly */
     0% {
-        opacity: 1;
+        opacity: 0;
     }
     25% {
         opacity: 0;

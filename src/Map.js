@@ -49,7 +49,8 @@ if (hovered !== name){
 >
             <div className="map">
             <h4 onClick={props.onClick}>{selectedSpot.name}</h4>
-            <img style={{width: 400, height: 400}} src={selectedSpot.img}/>
+            <h6>{selectedSpot.tag}</h6>
+            <img style={{width: 350, height: 250}} src={selectedSpot.img}/>
             </div>
             </InfoWindow>
           )}

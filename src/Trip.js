@@ -7,7 +7,8 @@ class Trip extends Component {
   state = {
     name:'',
     date:'',
-    address:''
+    address:'',
+    notes:''
   }
 
 
@@ -25,7 +26,8 @@ class Trip extends Component {
   this.setState({
     name:'',
     date:'',
-    address:''
+    address:'',
+    notes:''
 });
 }
 
@@ -59,8 +61,15 @@ class Trip extends Component {
 <input type="Address"
     name="address"
     type="text"
-    placeholder="Neighborhood"
+    placeholder="locations to hit"
     value={this.state.address}
+    onChange={this.changeHandler}
+/>
+<input type="Notes"
+    name="notes"
+    type="text"
+    placeholder="notes"
+    value={this.state.notes}
     onChange={this.changeHandler}
 />
 <input type="Submit" value="Lets Go!"/>
@@ -72,6 +81,7 @@ return (
       <h3>{trip.name}</h3>
      <li>{trip.address}</li>
      <li>{trip.date}</li>
+     <li>{trip.notes}</li>
      </div>
   ) } )
 

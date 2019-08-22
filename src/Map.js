@@ -5,13 +5,10 @@ import mapStyles from "./mapStyles";
 
 
 function Map(props){
-const [hovered, setHovered] = useState(null);
-const [selectedSpot,setSelectedSpot] = useState(null);
-const name = props.spots.name;
 
-if (hovered !== name){
-  setHovered(console.log(name));
-}
+
+const [selectedSpot,setSelectedSpot] = useState(null);
+  console.log(props);
 
   return  (
 
@@ -20,12 +17,15 @@ if (hovered !== name){
           defaultZoom={12}
           defaultCenter={{lat:40.692532,lng:-73.990997 }}
           defaultOptions={{styles: mapStyles}}
+
           >
-          {props.spots.map((spot) => (
-
-            <Marker  animation={window.google.maps.Animation.DROP} onHover={props.onHover} isActive={hovered === props.spots.name} key={spot.id} name={spot.name} position={{lat:parseFloat(spot.lat),lng: parseFloat(spot.lng),
+          {props.spots.map((spot) => {
+            // console.log(props.hovered === spot.name)
+            console.log("props", props.hovered);
+            // console.log("spot", spot.name);
+            return (
+             <Marker animation={props.hovered === spot.name ? window.google.maps.Animation.BOUNCE : null} hovered={props.hovered} onHover={props.onHover} key={spot.id} name={spot.name} position={{lat:parseFloat(spot.lat),lng: parseFloat(spot.lng),
             }}
-
 
 
               onClick={() => {
@@ -37,7 +37,7 @@ if (hovered !== name){
                 scaledSize: new window.google.maps.Size(25,25)
               }}
             />
-          ))}
+          )})}
 
           {selectedSpot && (
             <InfoWindow
@@ -50,7 +50,7 @@ if (hovered !== name){
             <div className="map">
             <h4 onClick={props.onClick}>{selectedSpot.name}</h4>
             <h6>{selectedSpot.tag}</h6>
-            <img style={{width: 350, height: 250}} src={selectedSpot.img}/>
+            <img style={{width: 350, height: 300}} src={selectedSpot.img}/>
             </div>
             </InfoWindow>
           )}
@@ -76,6 +76,7 @@ export default function App(props){
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div  style={{ height: `100%` }} />}
   spots={props.spots}
+  hovered={props.hovered}
 
 />
   </div>)

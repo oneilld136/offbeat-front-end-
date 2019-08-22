@@ -14,10 +14,9 @@ state = {
   browseSpot:[],
   filterTerm:"All",
   sortTerm:"",
-  selectedItem: ""
+  selectedItem: "",
+  hovered:null
 }
-
-
 
 
   componentDidMount() {
@@ -40,14 +39,20 @@ state = {
     sortTerm:term
      });
 
-     handleHover = (spot) => {
-       const id = spot;
-     }
+  handleHover = (spot) => {
+    // console.log(spot.name)
+
+       this.setState({
+         hovered:spot.name
+       });
+
+
+   }
+
 
 
 
      showInfo=(selectedItem) => {
-
        this.setState({ selectedItem:selectedItem});
        console.log(this.state.selectedItem);
      }
@@ -101,7 +106,7 @@ let copiedSpots = [...this.state.browseSpot]
 
   render() {
 
-
+console.log(this.state.hovered);
 
     return (
 
@@ -115,7 +120,7 @@ let copiedSpots = [...this.state.browseSpot]
           sortTerm={this.state.sortTerm}/>
           <div>
 
-        <div className="map"> <Map onHover={this.handleHover} spotInfo={this.spotInfo} selectedItem={this.state.selectedItem} spots={this.state.browseSpot}/> </div>
+        <div className="map"> <Map hovered={this.state.hovered} onHover={this.handleHover} spotInfo={this.spotInfo} selectedItem={this.state.selectedItem} spots={this.state.browseSpot}/> </div>
 
             <h6 className="add">Select the 💥 to add to your profile</h6>
         <div>  <div className= "flex-container">{(this.filterSpotTerm())}</div>

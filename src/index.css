@@ -319,7 +319,7 @@ h1 a{
 /* if you only want to cycle a finite amount of times,
    simply change 'infinite' with # of iterations you need */
     animation-iteration-count: infinite;
-    animation-duration: 25s;
+    animation-duration: 30s;
     animation-direction: alternate; /* not strictly necessary */
     position:absolute;
 }
